@@ -1,8 +1,13 @@
-const data = new Date(Date.UTC);
-console.log(data);
+const selectedDayInp = document.querySelector('#selectedDay');
+const display = document.querySelector('section');
 
-data.toDateString;
-console.log(data);
-
-
-document.querySelector('wynik').innerHTML = data;
+selectedDayInp.addEventListener('change',function() {
+    const selectedDay = new Date(selectedDayInp.value);
+    display.innerHTML = selectedDay.toLocaleDateString
+    ('pl-PL',{
+        weekday: "long",
+        day: '2-digit',
+        month: 'long',
+        year: 'numeric',
+    });
+});
